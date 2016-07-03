@@ -1,0 +1,89 @@
+
+<body class="main_stuff">
+    <head id="Header" class="Heading">
+        Quadtratic Formula Calculator
+    </head>
+    <p id="formula">
+        y=<b>A</b>x<sup>2</sup> + <b>B</b>x + <b>C</b>
+    </p>
+    <p>
+        A:
+        <input type="text" name="A" onchange="calculate()" id ="A"/>
+    </p>
+
+    <p>
+        B:
+        <input type="text" name="B" onchange="calculate()" id ="B" />
+
+        <p>
+            C:
+            <input type="text" name="C" onchange="calculate()" id ="C" />
+        </p>
+
+        <p>
+            Value:
+            <object id="value"></object>
+        </p>
+        <button onClick="calculate()" value="calculate" id="calculateButton">
+            calc!
+        </button>
+
+
+
+    </p>
+
+
+    <script src="quad.js">
+    </script>
+    <button id="clickButton" class="dropdown_menu" onClick="dropdown()">
+    </button>
+    <div id="dropdown" class="dropdown_menu">
+        <div id="dropdown-content" class="dropdown-content">
+            <a class ="content" href="#">link 1</a>
+            <a class ="content" href="#">link 2</a>
+            <a class ="content" href="#">link 3</a>
+        </div>
+    </div>
+</body>
+<style media="screen">
+    .main_stuff{
+        background-color:linen;
+    }
+    a{
+        background-color: linen;
+        color: black;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:linen;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+    .show {display:block;}
+</style>
+<script id="jsScript">
+    function dropdown(){
+        document.getElementById("dropdown-content").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+
+</script>
